@@ -136,6 +136,10 @@
         
         self.filename = [files objectAtIndex:0];
         NSImage *theImage = [[[NSImage alloc] initWithContentsOfFile:filename] autorelease];
+        
+        // Unknow reason, image is smaller than original, 2.5
+        [theImage setSize:NSMakeSize(theImage.size.width*2.5, theImage.size.height*2.5)];
+        
         [self setImage:theImage];
         [self setNeedsDisplay:YES];
     }

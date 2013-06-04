@@ -64,6 +64,9 @@
     
     NSImage *image = [[[NSImage alloc] initWithContentsOfFile:tileCutterView.filename] autorelease];
     
+    // Unknow reason, image is smaller than original, 2.5
+    [image setSize:NSMakeSize(image.size.width*2.5, image.size.height*2.5)];
+    
     [rowBar setIndeterminate:NO];
     [columnBar setIndeterminate:NO];
     [rowBar setMaxValue:(double)[image rowsWithTileHeight:[heightTextField floatValue]]];
